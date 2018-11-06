@@ -41,3 +41,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: bg_0
+    uniqueID: 511107349
+    locked: 0
+  - name: bg_1
+    uniqueID: 3482801667
+    locked: 0
+  - name: bg_2
+    uniqueID: 216071561
+    locked: 0
+  - name: tiles
+    uniqueID: 2573529323
+    locked: 0
+  - name: items
+    uniqueID: 1782453555
+    locked: 0
+  - name: enemy
+    uniqueID: 557852145
+    locked: 0
+  - name: player
+    uniqueID: 1820149265
+    locked: 0
