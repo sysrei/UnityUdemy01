@@ -56,9 +56,7 @@ private bool facingRight = true;
 	void PlayAnimations(){
 
 		if(grounded && rb2D.velocity.x != 0){
-		
 			animator.Play("Run");
-			
 		}
 		else if(grounded && rb2D.velocity.x == 0){
 			animator.Play("Idle");
