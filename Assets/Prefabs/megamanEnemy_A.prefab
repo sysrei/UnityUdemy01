@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4106187120359966}
   m_Layer: 10
-  m_Name: groundCheck
+  m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -38,10 +38,11 @@ GameObject:
   - component: {fileID: 95340500578680492}
   - component: {fileID: 70067813754580154}
   - component: {fileID: 50927345208959160}
+  - component: {fileID: 114493125955857988}
   m_Layer: 10
   m_Name: megamanEnemy_A
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -66,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051891717225288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.84, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4018144816479484}
@@ -125,6 +126,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114493125955857988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517967331293292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b19ab1250f64addbd891a52183fa0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  groundCheck: {fileID: 4106187120359966}
+  layerGround:
+    serializedVersion: 2
+    m_Bits: 256
+  radiusCheck: 0.2
 --- !u!212 &212194946099171818
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -162,7 +180,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300088, guid: 33837c6f2d999463982857e8a792b04a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.5, y: 2.2666667}
