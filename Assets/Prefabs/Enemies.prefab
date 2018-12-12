@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4102237646710256}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 95368451678007970}
   - component: {fileID: 70260782336893770}
   - component: {fileID: 50679981184540946}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Monster_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 95338915535116158}
   - component: {fileID: 70721586761624634}
   - component: {fileID: 50203369941527048}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Monster_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4098267490270220}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -106,7 +106,8 @@ GameObject:
   - component: {fileID: 95226612293286060}
   - component: {fileID: 70847319249146796}
   - component: {fileID: 50501356727239838}
-  m_Layer: 0
+  - component: {fileID: 114436153396078686}
+  m_Layer: 10
   m_Name: Monster_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4642795921229462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -384,6 +385,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114436153396078686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1675721851816236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b19ab1250f64addbd891a52183fa0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  groundCheck: {fileID: 4102237646710256}
+  layerGround:
+    serializedVersion: 2
+    m_Bits: 256
+  radiusCheck: 0.2
 --- !u!212 &212483581276343554
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -421,7 +439,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 515d43cb700554ac386d5e1459c6a713, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.1333334, y: 2.1333334}
@@ -467,7 +485,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d77a5f8cbaef344ebb3028fa0ea43a0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2, y: 2}
@@ -513,7 +531,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a2aeb53c4ddcc45b8ba8f747543fbd03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.4615386, y: 2.4615386}

@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void OnBecameVisible(){
-		Invoke("MoveEnemy", 3f);
+		Invoke("MoveEnemy", 1f);
 	}
 
 	void OnBecameInvisible(){
@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour {
 
 	void MoveEnemy(){
 		isVisible = true;
-		animator.Play("Walk");
+		animator.Play("Run");
 	}
 
 	void StopEnemy(){
