@@ -18,6 +18,7 @@ private Rigidbody2D rb2D;
 private Animator animator;
 private bool facingRight = true;
 private bool isAlive = true;
+private bool levelCompleted = false;
 
 
 
@@ -42,7 +43,7 @@ private bool isAlive = true;
 	void FixedUpdate(){
 
 		
-		if(isAlive){
+		if(isAlive && !levelCompleted){
 		float move = Input.GetAxis("Horizontal");
 		rb2D.velocity = new Vector2(move * speed, rb2D.velocity.y);
 
@@ -64,7 +65,10 @@ private bool isAlive = true;
 
 	void PlayAnimations(){
 
-		if(!isAlive){
+		if(levelCompleted){
+			animator.Play("Celebrate");
+		}
+		else if(!isAlive){
 			animator.Play("Die");
 		}
 		else if(grounded && rb2D.velocity.x != 0){
@@ -93,6 +97,13 @@ private bool isAlive = true;
 	void PlayerDie(){
 		isAlive = false;
 		Physics2D.IgnoreLayerCollision(9, 10);
+	}
+
+
+	void OnTriggerEnter2D(Collider2D otherObject){
+		if(otherObject.CompareTag("Exit")){
+			levelCompleted = true;
+		}
 	}
 
 }
