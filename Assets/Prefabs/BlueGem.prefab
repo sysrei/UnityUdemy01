@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212582722659489344}
   - component: {fileID: 70362357875381698}
   - component: {fileID: 114816208949462134}
+  - component: {fileID: 114376113143401768}
   m_Layer: 0
   m_Name: BlueGem
   m_TagString: Untagged
@@ -51,12 +52,23 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.011884928, y: 0.037612498}
   m_Size: {x: 0.6733198, y: 0.72477496}
   m_Direction: 0
+--- !u!114 &114376113143401768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772284501554810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2fa2d102dfa492295236bb8102700e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114816208949462134
 MonoBehaviour:
   m_ObjectHideFlags: 1

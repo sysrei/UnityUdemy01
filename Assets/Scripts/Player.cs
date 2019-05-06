@@ -17,6 +17,9 @@ public float radiusCheck;
 private Rigidbody2D rb2D;
 private Animator animator;
 private bool facingRight = true;
+private bool isAlive = true;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -38,9 +41,9 @@ private bool facingRight = true;
 
 	void FixedUpdate(){
 
-		float move = 0f;
-
-		move = Input.GetAxis("Horizontal");
+		
+		if(isAlive){
+		float move = Input.GetAxis("Horizontal");
 		rb2D.velocity = new Vector2(move * speed, rb2D.velocity.y);
 
 		if(move < 0 && facingRight || move > 0 && !facingRight){
@@ -51,11 +54,20 @@ private bool facingRight = true;
 			rb2D.AddForce(new Vector2(0f, jumpPower));
 			jumping = false;
 		}
+		}
+		else{
+			rb2D.velocity = new Vector2(0, rb2D.velocity.y);
+		}
+
+
 	}
 
 	void PlayAnimations(){
 
-		if(grounded && rb2D.velocity.x != 0){
+		if(!isAlive){
+			animator.Play("Die");
+		}
+		else if(grounded && rb2D.velocity.x != 0){
 			animator.Play("Run");
 		}
 		else if(grounded && rb2D.velocity.x == 0){
@@ -69,6 +81,18 @@ private bool facingRight = true;
 	void Flip(){
 		facingRight = !facingRight;
 		transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+	}
+
+	void OnCollisionEnter2D(Collision2D otherObject){
+
+		if(otherObject.gameObject.CompareTag("Enemy")){
+		PlayerDie();
+		}
+	}
+	
+	void PlayerDie(){
+		isAlive = false;
+		Physics2D.IgnoreLayerCollision(9, 10);
 	}
 
 }
