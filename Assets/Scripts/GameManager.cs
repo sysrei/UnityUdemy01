@@ -54,11 +54,7 @@ public class GameManager : MonoBehaviour {
 		else{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
-
-		
 	}
-
-
 
 	public void SetOverlay(GameStatus pStatus){
 		status = pStatus;

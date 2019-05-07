@@ -89,7 +89,7 @@ private bool levelCompleted = false;
 
 	void OnCollisionEnter2D(Collision2D otherObject){
 
-		if(otherObject.gameObject.CompareTag("Enemy")){
+		if(otherObject.gameObject.CompareTag("Enemy") || otherObject.gameObject.CompareTag("Hole")){
 		PlayerDie();
 		}
 	}

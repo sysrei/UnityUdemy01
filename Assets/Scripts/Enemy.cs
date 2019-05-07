@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
 	public float speed; // Speed of the player
 	public Transform groundCheck; // Ckeck if the ground is touched
 	public LayerMask layerGround; // Variable of the layer
-	private bool grounded; // Know when the player is on the ground
+	private bool grounded; // Known when the player is on the ground
 
 	public float radiusCheck;
 
