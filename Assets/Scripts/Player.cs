@@ -19,6 +19,7 @@ private Animator animator;
 private bool facingRight = true;
 private bool isAlive = true;
 private bool levelCompleted = false;
+private bool timesOver = false;
 
 
 
@@ -37,11 +38,14 @@ private bool levelCompleted = false;
 			//Jump commands
 			jumping = true;
 		}
+		if((int)GameManager.instance.time <= 0 && !timesOver){
+			timesOver = true;
+			PlayerDie();
+		}
 		PlayAnimations();
 	}
 
 	void FixedUpdate(){
-
 		
 		if(isAlive && !levelCompleted){
 		float move = Input.GetAxis("Horizontal");
@@ -104,6 +108,19 @@ private bool levelCompleted = false;
 		if(otherObject.CompareTag("Exit")){
 			levelCompleted = true;
 		}
+	}
+
+	void DieAnimationFinished(){
+		if(timesOver){
+			GameManager.instance.SetOverlay(GameManager.GameStatus.LOSE);
+		}
+		else{
+			GameManager.instance.SetOverlay(GameManager.GameStatus.DIE);
+		}
+	}
+
+	void CelebrateAnimationFinished(){
+		GameManager.instance.SetOverlay(GameManager.GameStatus.WIN);
 	}
 
 }
