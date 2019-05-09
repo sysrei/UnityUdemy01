@@ -20,8 +20,9 @@ private bool facingRight = true;
 private bool isAlive = true;
 private bool levelCompleted = false;
 private bool timesOver = false;
-
-
+public AudioClip fxPlayer;
+public AudioClip fxWin;
+public AudioClip fxDie;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +38,9 @@ private bool timesOver = false;
 		if(Input.GetButtonDown("Jump") && grounded){
 			//Jump commands
 			jumping = true;
+			if(isAlive && !levelCompleted){
+			SoundManager.instance.PlayFxPlayer(fxPlayer);
+			}
 		}
 		if((int)GameManager.instance.time <= 0 && !timesOver){
 			timesOver = true;
@@ -63,8 +67,6 @@ private bool timesOver = false;
 		else{
 			rb2D.velocity = new Vector2(0, rb2D.velocity.y);
 		}
-
-
 	}
 
 	void PlayAnimations(){
@@ -101,12 +103,14 @@ private bool timesOver = false;
 	void PlayerDie(){
 		isAlive = false;
 		Physics2D.IgnoreLayerCollision(9, 10);
+		SoundManager.instance.PlayFxPlayer(fxDie);
 	}
 
 
 	void OnTriggerEnter2D(Collider2D otherObject){
 		if(otherObject.CompareTag("Exit")){
 			levelCompleted = true;
+			SoundManager.instance.PlayFxPlayer(fxWin);
 		}
 	}
 

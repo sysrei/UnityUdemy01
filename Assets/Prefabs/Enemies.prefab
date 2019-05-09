@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 95368451678007970}
   - component: {fileID: 70260782336893770}
   - component: {fileID: 50679981184540946}
+  - component: {fileID: 114091289517511532}
   m_Layer: 10
   m_Name: Monster_C
   m_TagString: Enemy
@@ -72,6 +73,7 @@ GameObject:
   - component: {fileID: 95338915535116158}
   - component: {fileID: 70721586761624634}
   - component: {fileID: 50203369941527048}
+  - component: {fileID: 114852061247707448}
   m_Layer: 10
   m_Name: Monster_B
   m_TagString: Enemy
@@ -88,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4098267490270220}
   m_Layer: 10
-  m_Name: GroundCheck
+  m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -123,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4642795921229462}
   m_Layer: 10
-  m_Name: GroundCheck
+  m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -176,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1282161510925556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 85.38, y: -8.04, z: 0.05859375}
+  m_LocalPosition: {x: 63.62, y: -3.21, z: 0.05859375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4098267490270220}
@@ -385,6 +387,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114091289517511532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282161510925556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b19ab1250f64addbd891a52183fa0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  groundCheck: {fileID: 4098267490270220}
+  layerGround:
+    serializedVersion: 2
+    m_Bits: 256
+  radiusCheck: 0.2
 --- !u!114 &114436153396078686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -402,6 +421,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   radiusCheck: 0.2
+--- !u!114 &114852061247707448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1503158952043412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b19ab1250f64addbd891a52183fa0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  groundCheck: {fileID: 0}
+  layerGround:
+    serializedVersion: 2
+    m_Bits: 0
+  radiusCheck: 0
 --- !u!212 &212483581276343554
 SpriteRenderer:
   m_ObjectHideFlags: 1

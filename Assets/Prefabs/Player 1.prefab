@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4492451360345338
 Transform:
   m_ObjectHideFlags: 1
@@ -137,13 +137,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d224aacf207fa4e0cb285d171f490fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  jumpPower: 650
-  groundCheck: {fileID: 0}
+  speed: 6.5
+  jumpPower: 635
+  groundCheck: {fileID: 4954266973589800}
   layerGround:
     serializedVersion: 2
     m_Bits: 256
   radiusCheck: 0.2
+  fxPlayer: {fileID: 8300000, guid: c744533d5539043bba1eda57f6020687, type: 3}
+  fxWin: {fileID: 8300000, guid: 8d946e3e9cbd349bcb30e5b54d045f4a, type: 3}
+  fxDie: {fileID: 8300000, guid: edcaf3cab497a48f3ba46e3b9318d017, type: 3}
 --- !u!212 &212420510813399212
 SpriteRenderer:
   m_ObjectHideFlags: 1
